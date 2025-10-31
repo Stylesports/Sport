@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pedidos - Estilo Activo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Fallback -->
+    <link rel="icon" href="bici-removebg-preview.png" type="image/png">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 30px 0;
+            color: #004080;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .order-container {
+            max-width: 900px;
+            margin: 20px auto 40px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+        }
+        
+        .order-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+            border-left: 5px solid #00CCFF;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .order-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 204, 255, 0.2);
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e6f7ff;
+        }
+        
+        .order-id {
+            font-size: 1.2rem;
+            color: #004080;
+            font-weight: bold;
+        }
+        
+        .order-date {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .order-total {
+            font-size: 1.3rem;
+            color: #005580;
+            font-weight: bold;
+        }
+        
+        .order-products {
+            margin-top: 15px;
+            background-color: #f9fdff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #cce6ff;
+        }
+        
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        
+        .no-orders {
+            text-align: center;
+            padding: 60px;
+            color: #666;
+            font-size: 1.2rem;
+            background: #f9fdff;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 204, 255, 0.1);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #00CCFF, #0066CC);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 204, 255, 0.4);
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .order-summary {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(to right, #e6f7ff, #f0f9ff);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 204, 255, 0.1);
+        }
+        
+        .summary-icon {
+            color: #0066CC;
+            margin-right: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
+        
+        .summary-text {
+            flex: 1;
+        }
+        
+        .summary-text p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            background: linear-gradient(to right, #00CCFF, #0066CC);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 204, 255, 0.3);
+        }
+        
+        .fa-spinner {
+            margin-right: 10px;
+            color: #00CCFF;
+        }
+        
+        .order-details {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .detail-item {
+            margin-right: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .detail-item i {
+            color: #0066CC;
+            margin-right: 5px;
+        }
+        
+        .products-header {
+            margin-bottom: 10px;
+            color: #0066CC;
+            font-size: 1.1rem;
+        }
+        
+        .product-item {
+            padding: 12px;
+            background-color: white;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        
+        .product-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 8px rgba(0, 204, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="bici-removebg-preview.png" alt="Estilo Activo Logo">
+                <span>Estilo Activo</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="mis-pedidos.html" class="active"><i class="fas fa-shopping-bag"></i> Mis Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="page-title"><i class="fas fa-clipboard-list"></i> Mis Pedidos</h1>
+
+    <div class="order-container">
+        <div class="order-summary">
+            <div class="summary-icon">
+                <i class="fas fa-box-open fa-3x"></i>
+            </div>
+            <div class="summary-text">
+                <p>Aquí encontrarás todos tus pedidos realizados en Estilo Activo.</p>
+                <p>Puedes revisar los detalles de cada pedido, incluyendo productos, precios y dirección de entrega.</p>
+            </div>
+        </div>
+        
+        <div id="orders-list">
+            <!-- Aquí se mostrarán los pedidos -->
+            <div class="no-orders"><i class="fas fa-spinner fa-pulse"></i> Cargando pedidos...</div>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            displayOrders();
+        });
+
+        const BACKEND_URL = 'http://localhost:3000';
+
+        async function displayOrders() {
+            const ordersContainer = document.getElementById('orders-list');
+            let orders = [];
+            let users = [];
+
+            // Intentar cargar desde backend primero
+            try {
+                const resOrders = await fetch(`${BACKEND_URL}/api/orders`);
+                if (resOrders.ok) {
+                    const data = await resOrders.json();
+                    orders = data.orders || [];
+                }
+                const resUsers = await fetch(`${BACKEND_URL}/api/users`);
+                if (resUsers.ok) {
+                    const dataU = await resUsers.json();
+                    users = dataU.users || [];
+                }
+            } catch (e) {
+                // Fallback a localStorage si el backend no está disponible
+                orders = JSON.parse(localStorage.getItem('orders')) || [];
+                users = JSON.parse(localStorage.getItem('users')) || [];
+            }
+
+            if (orders.length === 0) {
+                ordersContainer.innerHTML = '<div class="no-orders">No hay pedidos registrados</div>';
+                return;
+            }
+
+            // Ordenar pedidos por fecha (más recientes primero)
+            orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+            let ordersHTML = '';
+            
+            orders.forEach(order => {
+                const user = users.find(u => u.id === order.userId) || {};
+                
+                let productsHTML = '';
+                order.items.forEach(item => {
+                    productsHTML += `
+                        <div class="product-item">
+                            <span>${item.name} x ${item.quantity}</span>
+                            <span>$${(item.price * item.quantity).toLocaleString()}</span>
+                        </div>
+                    `;
+                });
+
+                const date = new Date(order.createdAt).toLocaleString();
+                
+                ordersHTML += `
+                    <div class="order-item">
+                        <div class="order-header">
+                            <div>
+                                <div class="order-id"><i class="fas fa-hashtag"></i> Pedido: ${order.id.substring(6)} · No. ${orders.indexOf(order) + 1}</div>
+                                <div class="order-date"><i class="far fa-calendar-alt"></i> ${date}</div>
+                            </div>
+                            <div class="order-total">
+                                <i class="fas fa-tag"></i> $${Number(order.total).toLocaleString()}
+                            </div>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i> <strong>Cliente:</strong> ${user.name || 'N/A'}
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> ${order.shippingAddress || 'N/A'}
+                            </div>
+                        </div>
+                        <div class="order-products">
+                            <div class="products-header">
+                                <i class="fas fa-shopping-cart"></i> <strong>Productos:</strong>
+                            </div>
+                            ${productsHTML}
+                        </div>
+                    </div>
+                `;
+            });
+
+            ordersContainer.innerHTML = ordersHTML;
+        }
+    </script>
+</body>
+</html>

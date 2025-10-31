@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style | Tienda Deportiva </title>
+    <meta name="description" content="Style: Tu tienda deportiva con las mejores marcas en camisetas, tenis, jeans y accesorios deportivos. Envío gratis en compras superiores.">
+    <meta name="keywords" content="tienda deportiva, ropa deportiva, camisetas adidas, tenis deportivos, cascos ciclismo, accesorios deportivos">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tienda Deportiva">
+    <meta property="og:description" content="Encuentra las mejores marcas deportivas con envío gratis en compras superiores.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estiloactivo.com/">
+    <link rel="canonical" href="https://estiloactivo.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#0000ff">
+    <link rel="icon" href="Img.png" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="Img.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Img.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Img.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Img.png">
+    <link rel="apple-touch-icon" href="Img.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preload" href="Img.png" as="image">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav" aria-label="Navegación principal">
+            <div class="nav-brand">
+                <h1><a href="#inicio" title="Style - Página de inicio">Style</a></h1>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li role="menuitem"><a href="#inicio" aria-current="page">Inicio</a></li>
+                <li role="menuitem"><a href="#camisetas">Camisetas</a></li>
+                <li role="menuitem"><a href="#tenis">Tenis</a></li>
+                <li role="menuitem"><a href="#jeans">Jeans</a></li>
+                <li role="menuitem"><a href="#cascos">Cascos</a></li>
+                <li role="menuitem"><a href="#deportes">Deportes</a></li>
+                <li role="menuitem"><a href="#regalos">Regalos</a></li>
+            </ul>
+            <div class="nav-actions" aria-label="Acciones de usuario"></div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>EXPLORA NUESTRA COLECCIÓN</h2>
+                <h3>Moda Deportiva Para Ti.</h3>
+                <p>Bienvenido a nuestra tienda deportiva mi rey, aqui encontraras productos deportivos de primera calidad. Descubre nuestra amplia gama de camisetas, zapatillas, jeans y accesorios para una vida activa y saludable. Ya tu sabes como es. </p>
+                <button class="btn-primary">Ver Más</button>
+            </div>
+            <div class="hero-image">
+                <div class="bike-container">
+                    <img src="bici-removebg-preview.png" alt="Bicicleta Deportiva" class="bike-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camisetas Adidas Section -->
+    <section id="camisetas" class="products-section">
+        <div class="section-header">
+            <h2>Camisetas Adidas</h2>
+            <button class="btn-secondary" onclick="showCatalog('camisetas')">Ver Catálogo</button>
+        </div>
+        <div class="products-carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel('camisetas', -1)">‹</button>
+            <div class="products-container" id="camisetas-container">
+                <div class="product-card" data-product='{"id": "camiseta-1", "name": "Camiseta Adidas Clásica", "price": 45000, "category": "camisetas"}'>
+                    <img src="Camiseta Adidas clasica.webp" alt="Camiseta Adidas Clásica" loading="lazy" width="300" height="300">
+                    <h3>Camiseta Adidas Clásica</h3>
+                    <p class="price">$45.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('camiseta-1', 'Camiseta Adidas Clásica', 45000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "camiseta-2", "name": "Camiseta Adidas Deportiva", "price": 60000, "category": "camisetas"}'>
+                    <img src="Camiseta adidas Madrid.webp" alt="Camiseta Adidas Deportiva">
+                    <h3>Camiseta Adidas Deportiva</h3>
+                    <p class="price">$60.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('camiseta-2', 'Camiseta Adidas Deportiva', 60000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "camiseta-3", "name": "Camiseta Adidas Running", "price": 40000, "category": "camisetas"}'>
+                    <img src="Camiseta Adidas.avif" alt="Camiseta Adidas Running">
+                    <h3>Camiseta Adidas Running</h3>
+                    <p class="price">$40.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('camiseta-3', 'Camiseta Adidas Running', 40000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "camiseta-4", "name": "Camiseta Adidas Training", "price": 55000, "category": "camisetas"}'>
+                    <img src="Camiseta Adidas3.jpg" alt="Camiseta Adidas Training">
+                    <h3>Camiseta Adidas Training</h3>
+                    <p class="price">$55.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('camiseta-4', 'Camiseta Adidas Training', 55000)">Agregar Ahora</button>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel('camisetas', 1)">›</button>
+        </div>
+    </section>
+
+    <!-- Tenis Adidas Section -->
+    <section id="tenis" class="products-section featured">
+        <div class="section-header">
+            <h2>Tenis Adidas Destacados</h2>
+            <button class="btn-secondary" onclick="showCatalog('tenis')">Ver Catálogo</button>
+        </div>
+        <div class="products-carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel('tenis', -1)">‹</button>
+            <div class="products-container" id="tenis-container">
+                <div class="product-card" data-product='{"id": "tenis-1", "name": "Tenis Adidas Ultraboost", "price": 450000, "category": "tenis"}'>
+                    <img src="Adidas Ultraboost.avif" alt="Tenis Adidas Ultraboost">
+                    <h3>Tenis Adidas Ultraboost</h3>
+                    <p class="price">$450.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('tenis-1', 'Tenis Adidas Ultraboost', 450000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "tenis-2", "name": "Tenis Adidas Stan Smith", "price": 280000, "category": "tenis"}'>
+                    <img src="Adidas Stan.avif" alt="Tenis Adidas Stan Smith">
+                    <h3>Tenis Adidas Stan Smith</h3>
+                    <p class="price">$280.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('tenis-2', 'Tenis Adidas Stan Smith', 280000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "tenis-3", "name": "Tenis Adidas NMD", "price": 320000, "category": "tenis"}'>
+                    <img src="Adidas nmp.webp" alt="Tenis Adidas NMD">
+                    <h3>Tenis Adidas NMD</h3>
+                    <p class="price">$320.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('tenis-3', 'Tenis Adidas NMD', 320000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "tenis-4", "name": "Tenis Adidas Gazelle", "price": 250000, "category": "tenis"}'>
+                    <img src="Adias gazelle.avif" alt="Tenis Adidas Gazelle">
+                    <h3>Tenis Adidas Gazelle</h3>
+                    <p class="price">$250.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('tenis-4', 'Tenis Adidas Gazelle', 250000)">Agregar Ahora</button>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel('tenis', 1)">›</button>
+        </div>
+    </section>
+
+    <!-- Jeans Section -->
+    <section id="jeans" class="products-section">
+        <div class="section-header">
+            <h2>Jeans Clásicos y Modernos</h2>
+            <button class="btn-secondary" onclick="showCatalog('jeans')">Ver Catálogo</button>
+        </div>
+        <div class="products-carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel('jeans', -1)">‹</button>
+            <div class="products-container" id="jeans-container">
+                <div class="product-card" data-product='{"id": "jeans-1", "name": "Jeans Clásicos", "price": 89000, "category": "jeans"}'>
+                    <img src="Jeans modernos.webp" alt="Jeans Clásicos">
+                    <h3>Jeans Clásicos</h3>
+                    <p class="price">$89.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('jeans-1', 'Jeans Clásicos', 89000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "jeans-2", "name": "Jeans Modernos", "price": 95000, "category": "jeans"}'>
+                    <img src="jeans modernos3.jpg" alt="Jeans Modernos">
+                    <h3>Jeans Modernos</h3>
+                    <p class="price">$95.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('jeans-2', 'Jeans Modernos', 95000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "jeans-3", "name": "Jeans Rotos", "price": 92000, "category": "jeans"}'>
+                    <img src="jeans rotos.jpg" alt="Jeans Skinny">
+                    <h3>Jeans Rotos</h3>
+                    <p class="price">$92.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('jeans-3', 'Jeans Rotos', 92000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card" data-product='{"id": "jeans-4", "name": "Jeans Relaxed", "price": 88000, "category": "jeans"}'>
+                    <img src="jeans relaxed.webp" alt="Jeans Relaxed">
+                    <h3>Jeans Relaxed</h3>
+                    <p class="price">$88.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('jeans-4', 'Jeans Relaxed', 88000)">Agregar Ahora</button>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel('jeans', 1)">›</button>
+        </div>
+    </section>
+
+    <!-- Cascos para Motos Section -->
+    <section id="cascos" class="products-section">
+        <div class="section-header">
+            <h2>Cascos para Motos</h2>
+            <button class="btn-secondary" onclick="showCatalog('cascos')">Ver Catálogo</button>
+        </div>
+        <div class="products-carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel('cascos', -1)">‹</button>
+            <div class="products-container" id="cascos-container">
+                <div class="product-card" data-product='{"id": "casco-1", "name": "Casco Integral Negro", "price": 190000, "category": "cascos"}'>
+                    <img src="CascoIntegral.webp" alt="Casco Integral Negro">
+                    <h3>Casco Integral Negro</h3>
+                    <p class="price">$190.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('casco-1', 'Casco Integral Negro', 190000)">Agregar Ahora</button>
+                    <button class="customize-btn" onclick="showCustomizationModal('casco-1')">Personalizar</button>
+                </div>
+                <div class="product-card" data-product='{"id": "casco-2", "name": "Casco Modular Blanco", "price": 220000, "category": "cascos"}'>
+                    <img src="modular.webp" alt="Casco Modular Blanco">
+                    <h3>Casco Modular Blanco</h3>
+                    <p class="price">$220.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('casco-2', 'Casco Modular Blanco', 220000)">Agregar Ahora</button>
+                    <button class="customize-btn" onclick="showCustomizationModal('casco-2')">Personalizar</button>
+                </div>
+                <div class="product-card" data-product='{"id": "casco-3", "name": "Casco Abierto Rojo", "price": 150000, "category": "cascos"}'>
+                    <img src="rojo.webp" alt="Casco Abierto Rojo">
+                    <h3>Casco Abierto Rojo</h3>
+                    <p class="price">$150.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('casco-3', 'Casco Abierto Rojo', 150000)">Agregar Ahora</button>
+                    <button class="customize-btn" onclick="showCustomizationModal('casco-3')">Personalizar</button>
+                </div>
+                <div class="product-card" data-product='{"id": "casco-4", "name": "Casco Cross Azul", "price": 200000, "category": "cascos"}'>
+                    <img src="cross azul.jpg" alt="Casco Cross Azul">
+                    <h3>Casco Cross Azul</h3>
+                    <p class="price">$200.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('casco-4', 'Casco Cross Azul', 200000)">Agregar Ahora</button>
+                    <button class="customize-btn" onclick="showCustomizationModal('casco-4')">Personalizar</button>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel('cascos', 1)">›</button>
+        </div>
+    </section>
+
+    <!-- Deportes Section -->
+    <section id="deportes" class="sports-section">
+        <div class="sports-products">
+            <div class="section-header">
+                <h2>Equipos Deportivos</h2>
+                <button class="btn-secondary" onclick="showCatalog('deportes')">Ver Catálogo</button>
+            </div>
+            <div class="products-grid">
+                <div class="product-card large" data-product='{"id": "bici-1", "name": "Bicicleta Deportiva", "price": 1200000, "category": "deportes"}'>
+                    <img src="BicicletaVenta.jpg" alt="Bicicleta Deportiva">
+                    <h3>Bicicleta Deportiva</h3>
+                    <p class="price">$1.200.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('bici-1', 'Bicicleta Deportiva', 1200000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card large" data-product='{"id": "casco-deportivo-1", "name": "Casco Deportivo", "price": 85000, "category": "deportes"}'>
+                    <img src="CascoCiclis.jpg" alt="Casco Deportivo">
+                    <h3>Casco Deportivo</h3>
+                    <p class="price">$85.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('casco-deportivo-1', 'Casco Deportivo', 85000)">Agregar Ahora</button>
+                </div>
+                <div class="product-card large" data-product='{"id": "guantes-1", "name": "Guantes Ciclismo", "price": 45000, "category": "deportes"}'>
+                    <img src="GuantesCiclismo.webp" alt="Guantes Ciclismo">
+                    <h3>Guantes Ciclismo</h3>
+                    <p class="price">$45.000 COP</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('guantes-1', 'Guantes Ciclismo', 45000)">Agregar Ahora</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos de Regalo Section -->
+    <section id="regalos" class="products-section">
+        <div class="section-header">
+            <h2>Productos de Regalo</h2>
+            <div class="gift-info">
+                <span class="gift-badge">¡GRATIS con compras superiores a $500.000!</span>
+            </div>
+        </div>
+        <div class="products-carousel">
+            <button class="carousel-btn prev" onclick="moveCarousel('regalos', -1)">‹</button>
+            <div class="products-container" id="regalos-container">
+                <div class="product-card gift-card" data-product='{"id": "gafas-1", "name": "Gafas Deportivas", "price": 35000, "category": "regalos"}'>
+                    <img src="gafasdepor.webp" alt="Gafas Deportivas ">
+                    <h3>Gafas Deportivas </h3>
+                    <p class="price normal-price">$35.000 COP</p>
+                    <p class="price gift-price" style="display: none;">¡GRATIS!</p>
+                    <button class="add-to-cart-btn" onclick="addGiftToCart('gafas-1', 'Gafas Deportivas', 35000)">Agregar al Carrito</button>
+                </div>
+                <div class="product-card gift-card" data-product='{"id": "gorra-1", "name": "Gorra ", "price": 25000, "category": "regalos"}'>
+                    <img src="gorras.avif" alt="Gorra ">
+                    <h3>Gorra </h3>
+                    <p class="price normal-price">$25.000 COP</p>
+                    <p class="price gift-price" style="display: none;">¡GRATIS!</p>
+                    <button class="add-to-cart-btn" onclick="addGiftToCart('gorra-1', 'Gorra ', 25000)">Agregar al Carrito</button>
+                </div>
+                <div class="product-card gift-card" data-product='{"id": "peluche-1", "name": "Peluche ", "price": 20000, "category": "regalos"}'>
+                    <img src="peluche.jpg" alt="Peluche ">
+                    <h3>Peluche </h3>
+                    <p class="price normal-price">$20.000 COP</p>
+                    <p class="price gift-price" style="display: none;">¡GRATIS!</p>
+                    <button class="add-to-cart-btn" onclick="addGiftToCart('peluche-1', 'Peluche ', 20000)">Agregar al Carrito</button>
+                </div>
+                <div class="product-card gift-card" data-product='{"id": "bandana-1", "name": "Bandana Deportiva", "price": 15000, "category": "regalos"}'>
+                    <img src="bandanaDepor.avif" alt="Bandana Deportiva">
+                    <h3>Bandana Deportiva</h3>
+                    <p class="price normal-price">$15.000 COP</p>
+                    <p class="price gift-price" style="display: none;">¡GRATIS!</p>
+                    <button class="add-to-cart-btn" onclick="addGiftToCart('bandana-1', 'Bandana Deportiva', 15000)">Agregar al Carrito</button>
+                </div>
+            </div>
+            <button class="carousel-btn next" onclick="moveCarousel('regalos', 1)">›</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Style</h3>
+                <p>Disfruta de nuestra tienda deportiva mi rey</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#camisetas">Camisetas</a></li>
+                    <li><a href="#tenis">Tenis</a></li>
+                    <li><a href="#jeans">Jeans</a></li>
+                    <li><a href="#cascos">Cascos</a></li>
+                    <li><a href="#deportes">Deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>!! Contacto !!</h4>
+                <p>Email: okochajayjay59@gmail.com </p>
+                <p>Teléfono: +57 3116039256 </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025/26 Tienda Deportiva. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Carrito de Compras -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Los productos se agregarán dinámicamente aquí -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <p>Subtotal: <span id="cart-subtotal">$0 COP</span></p>
+                <p class="discount-info" id="discount-info" style="display: none;">Descuento aplicado: <span id="discount-amount">$0 COP</span></p>
+                <p class="shipping-info" id="shipping-info">Envío: <span id="shipping-amount">$25.000 COP</span></p>
+                <p class="gift-info" id="gift-info" style="display: none;">¡Regalo incluido!</p>
+                <p class="total">Total: <span id="cart-total">$0 COP</span></p>
+            </div>
+            <button class="checkout-btn" onclick="openReservationModal()">Reservar compra</button>
+        </div>
+    </div>
+
+    <!-- Modal de Personalización de Cascos -->
+    <div id="customization-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Personalizar Casco</h3>
+                <button class="close-modal" onclick="closeCustomizationModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="customization-options">
+                    <div class="option-group">
+                        <label>Color:</label>
+                        <div class="color-options">
+                            <button class="color-btn" data-color="negro" style="background: #000;"></button>
+                            <button class="color-btn" data-color="blanco" style="background: #fff; border: 1px solid #ccc;"></button>
+                            <button class="color-btn" data-color="rojo" style="background: #ff0000;"></button>
+                            <button class="color-btn" data-color="azul" style="background: #0000ff;"></button>
+                        </div>
+                    </div>
+                    <div class="option-group">
+                        <label>Diseño:</label>
+                        <select id="design-select">
+                            <option value="sólido">Sólido</option>
+                            <option value="rayas">Rayas</option>
+                            <option value="camuflaje">Camuflaje</option>
+                            <option value="personalizado">Personalizado</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label>Texto personalizado:</label>
+                        <input type="text" id="custom-text" placeholder="Escribe tu texto aquí" maxlength="20">
+                    </div>
+                    <div class="option-group">
+                        <label>Precio adicional:</label>
+                        <span id="custom-price">$0 COP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCustomizationModal()">Cancelar</button>
+                <button class="btn-primary" onclick="addCustomizedToCart()">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Catálogo -->
+    <div id="catalog-modal" class="modal">
+        <div class="modal-content catalog-modal">
+            <div class="modal-header">
+                <h3 id="catalog-title">Catálogo</h3>
+                <button class="close-modal" onclick="closeCatalogModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="catalog-grid" id="catalog-grid">
+                    <!-- Los productos del catálogo se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro de Pedido -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content payment-modal">
+            <div class="modal-header">
+                <h3>Finalizar Pedido</h3>
+                <button class="close-modal" onclick="closeReservationModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-summary">
+                    <h4>Resumen de tu Pedido</h4>
+                    <div id="reservation-items"></div>
+                    <div class="payment-total">
+                        <p>Total a pagar: <span id="reservation-total-amount"></span></p>
+                    </div>
+                    <div class="payment-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <span class="benefit-text">Pago 100% Seguro</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚚</span>
+                            <span class="benefit-text">Envío Gratis en compras +$150.000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <h4>Información de Contacto</h4>
+                    <form id="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reservation-name">Nombre Completo</label>
+                                <input type="text" id="reservation-name" pattern="[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+" title="Solo se permiten letras y espacios" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reservation-phone">Teléfono</label>
+                                <input type="tel" id="reservation-phone" placeholder="3001234567" maxlength="10" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reservation-email">Correo electrónico</label>
+                                <input type="email" id="reservation-email" required inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" pattern="^[a-z0-9._%+-]+@(gmail\.com|udi\.edu\.co|hotmail\.com)$" title="Usa un correo válido en minúsculas que termine en @gmail.com, @udi.edu.co o @hotmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-address">Dirección de Entrega</label>
+                            <input type="text" id="reservation-address" required placeholder="Ej: Calle 10 # 12 - 34, Apto 201" title="Debe contener 'Calle' o 'Carrera' con número y un '#' seguido de número. Ej: Calle 10 # 12 - 34">
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-notes">Notas adicionales (opcional)</label>
+                            <textarea id="reservation-notes" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary payment-submit">Realizar Pedido</button>
+                        
+                        <div class="secure-payment">
+                            <span class="secure-icon">🔒</span> Tus datos están protegidos
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Términos y Condiciones -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content terms-modal">
+            <div class="modal-header">
+                <h3>Términos y Condiciones</h3>
+                <button class="close-modal" onclick="closeTermsModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="terms-content">
+                    <h4>1. Aceptación de los Términos</h4>
+                    <p>Al acceder y usar este sitio web, aceptas estar sujeto a estos términos y condiciones de uso.</p>
+                    
+                    <h4>2. Uso del Sitio</h4>
+                    <p>Este sitio web está destinado para la compra de productos deportivos. No debes usar el sitio para actividades ilegales o no autorizadas.</p>
+                    
+                    <h4>3. Cuentas de Usuario</h4>
+                    <p>Debes ser mayor de 18 años para crear una cuenta. Eres responsable de mantener la confidencialidad de tu cuenta y contraseña.</p>
+                    
+                    <h4>4. Compras y Pagos</h4>
+                    <p>Los precios están en pesos colombianos (COP). Los pagos se procesan de forma segura a través de pasarelas de pago autorizadas.</p>
+                    
+                    <h4>5. Privacidad</h4>
+                    <p>Respetamos tu privacidad y protegemos tu información personal de acuerdo con nuestra política de privacidad.</p>
+                    
+                    <h4>6. Limitación de Responsabilidad</h4>
+                    <p>Estilo Activo no será responsable por daños indirectos o consecuenciales que puedan surgir del uso del sitio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pago -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content payment-modal">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-modal" onclick="closePaymentModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-summary">
+                    <h4>Resumen de tu Pedido</h4>
+                    <div id="payment-items"></div>
+                    <div class="payment-total">
+                        <p>Total a pagar: <span id="payment-total-amount"></span></p>
+                    </div>
+                    <div class="payment-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <span class="benefit-text">Pago 100% Seguro</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚚</span>
+                            <span class="benefit-text">Envío Gratis en compras +$150.000</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⏱️</span>
+                            <span class="benefit-text">Entrega en 24-48 horas, MAXIMO 72 HORAS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-methods">
+                    <h4>Selecciona tu Método de Pago</h4>
+                    
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" data-method="nequi">
+                            <img src="https://via.placeholder.com/30x30?text=N" alt="Nequi" class="payment-icon">
+                            Nequi
+                        </button>
+                        <button class="payment-tab" data-method="bancolombia">
+                            <img src="https://via.placeholder.com/30x30?text=B" alt="Bancolombia" class="payment-icon">
+                            Bancolombia
+                        </button>
+                        <button class="payment-tab" data-method="card">
+                            <img src="https://via.placeholder.com/30x30?text=T" alt="Tarjeta" class="payment-icon">
+                            Tarjeta
+                        </button>
+                    </div>
+                    
+                    <div class="payment-content">
+                        <!-- Nequi Payment -->
+                        <div id="nequi-payment" class="payment-method active">
+                            <div class="payment-option">
+                                <h5>Pago con Número</h5>
+                                <input type="tel" id="nequi-number" placeholder="Número de Nequi" maxlength="10">
+                                <button class="btn-primary" onclick="processNequiPayment()">Pagar con Nequi</button>
+                            </div>
+                            <div class="payment-divider">o</div>
+                            <div class="payment-option">
+                                <h5>Pago con QR</h5>
+                                <div class="qr-code" id="nequi-qr">
+                                    <img src="https://via.placeholder.com/200x200?text=QR+Nequi" alt="QR Nequi">
+                                </div>
+                                <p>Escanea el código QR con tu app de Nequi</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Bancolombia Payment -->
+                        <div id="bancolombia-payment" class="payment-method">
+                            <div class="payment-option">
+                                <h5>Pago con Número</h5>
+                                <input type="tel" id="bancolombia-number" placeholder="Número de Bancolombia" maxlength="10">
+                                <button class="btn-primary" onclick="processBancolombiaPayment()">Pagar con Bancolombia</button>
+                            </div>
+                            <div class="payment-divider">o</div>
+                            <div class="payment-option">
+                                <h5>Pago con QR</h5>
+                                <div class="qr-code" id="bancolombia-qr">
+                                    <img src="https://via.placeholder.com/200x200?text=QR+Bancolombia" alt="QR Bancolombia">
+                                </div>
+                                <p>Escanea el código QR con tu app de Bancolombia</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Payment -->
+                        <div id="card-payment" class="payment-method">
+                            <form id="card-form">
+                                <div class="card-visual">
+                                    <div class="card-front">
+                                        <div class="card-chip"></div>
+                                        <div class="card-number-display">•••• •••• •••• ••••</div>
+                                        <div class="card-details">
+                                            <div class="card-holder">NOMBRE DEL TITULAR</div>
+                                            <div class="card-expiry">MM/AA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-number">Número de tarjeta</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" oninput="updateCardVisual()">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Fecha de vencimiento</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" oninput="updateCardVisual()">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" id="card-cvv" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Nombre en la tarjeta</label>
+                                    <input type="text" id="card-name" placeholder="Nombre completo" oninput="updateCardVisual()">
+                                </div>
+                                <button type="submit" class="btn-primary payment-submit">Pagar con Tarjeta</button>
+                                <div class="secure-payment">
+                                    <span class="secure-icon">🔒</span> Pago seguro con encriptación SSL
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Perfil de Usuario -->
+    <div id="user-profile-modal" class="modal">
+        <div class="modal-content user-profile-modal">
+            <div class="modal-header">
+                <h3>Mi Perfil</h3>
+                <button class="close-modal" onclick="closeUserProfileModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="user-profile-content">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img id="profile-avatar" src="" alt="Avatar">
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profile-name"></h2>
+                            <p id="profile-email"></p>
+                            <p id="profile-phone"></p>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <label>Tipo de Documento:</label>
+                            <span id="profile-doc-type"></span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Número de Documento:</label>
+                            <span id="profile-doc-number"></span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Fecha de Nacimiento:</label>
+                            <span id="profile-birthdate"></span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Fecha de Registro:</label>
+                            <span id="profile-registration-date"></span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Último Acceso:</label>
+                            <span id="profile-last-login"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Mis Pedidos -->
+    <div id="my-products-modal" class="modal">
+        <div class="modal-content my-products-modal">
+            <div class="modal-header">
+                <h3>Mis Pedidos</h3>
+                <button class="close-modal" onclick="closeMyProductsModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="my-products-content">
+                    <div class="empty-state">
+                        <div class="empty-icon">📦</div>
+                        <p>No tienes pedidos realizados aún</p>
+                        <button class="btn-primary" onclick="closeMyProductsModal()">Comenzar a comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay para modales -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeAllModals()"></div>
+
+    <!-- Scripts -->
+    <script src="database.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script src="cart-functions.js"></script>
+    <script src="order-system.js"></script>
+</body>
+</html>

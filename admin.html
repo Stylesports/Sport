@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Estilo Activo</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#0000ff">
+    <link rel="icon" href="Img.png" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="Img.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Fallback -->
+    <link rel="icon" href="Img.png" type="image/png">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .admin-tab {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .admin-tab.active {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .admin-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .refresh-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .refresh-btn:hover {
+            background-color: #218838;
+        }
+        
+        .order-details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .back-to-store {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .back-to-store:hover {
+            text-decoration: underline;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+        
+        .id-badge {
+            background-color: #f0f0f0;
+            color: #333;
+            font-family: monospace;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="bici-removebg-preview.png" alt="Logo Estilo Activo">
+            <h1>Estilo Activo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Tienda</a></li>
+                <li><a href="mis-pedidos.html">Mis Pedidos</a></li>
+                <li><a href="admin.html" class="active">Administración</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h2>Panel de Administración</h2>
+            <button id="refreshData" class="refresh-btn">Actualizar Datos</button>
+        </div>
+        
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="users">Usuarios</button>
+            <button class="admin-tab" data-tab="orders">Pedidos</button>
+        </div>
+        
+        <div class="admin-content">
+            <div id="usersContent" class="tab-content">
+                <h3>Lista de Usuarios</h3>
+                <div id="usersTableContainer">
+                    <table class="data-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos de usuarios se cargarán aquí -->
+                        </tbody>
+                    </table>
+                    <div id="emptyUsers" class="empty-message">No hay usuarios registrados</div>
+                </div>
+            </div>
+            
+            <div id="ordersContent" class="tab-content" style="display: none;">
+                <h3>Lista de Pedidos</h3>
+                <div id="ordersTableContainer">
+                    <table class="data-table" id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Usuario</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos de pedidos se cargarán aquí -->
+                        </tbody>
+                    </table>
+                    <div id="emptyOrders" class="empty-message">No hay pedidos registrados</div>
+                </div>
+                
+                <div id="orderDetails" class="order-details">
+                    <h4>Detalles del Pedido</h4>
+                    <div id="orderDetailsContent"></div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-to-store">← Volver a la tienda</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables para almacenar datos
+            let users = [];
+            let orders = [];
+            
+            // Cargar datos iniciales
+            loadData();
+            
+            // Configurar pestañas
+            const tabs = document.querySelectorAll('.admin-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Desactivar todas las pestañas
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Activar la pestaña actual
+                    this.classList.add('active');
+                    
+                    // Ocultar todos los contenidos
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Mostrar el contenido correspondiente
+                    const tabName = this.getAttribute('data-tab');
+                    document.getElementById(tabName + 'Content').style.display = 'block';
+                    
+                    // Ocultar detalles del pedido al cambiar de pestaña
+                    document.getElementById('orderDetails').style.display = 'none';
+                });
+            });
+            
+            // Configurar botón de actualización
+            document.getElementById('refreshData').addEventListener('click', loadData);
+            
+            // Función para cargar datos
+            function loadData() {
+                // Cargar usuarios
+                fetch('/api/users')
+                    .then(response => response.json())
+                    .then(data => {
+                        users = data.users || [];
+                        renderUsers();
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar usuarios:', error);
+                    });
+                
+                // Cargar pedidos
+                fetch('/api/orders')
+                    .then(response => response.json())
+                    .then(data => {
+                        orders = data.orders || [];
+                        renderOrders();
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar pedidos:', error);
+                    });
+            }
+            
+            // Función para renderizar usuarios
+            function renderUsers() {
+                const tbody = document.querySelector('#usersTable tbody');
+                const emptyMessage = document.getElementById('emptyUsers');
+                
+                // Limpiar tabla
+                tbody.innerHTML = '';
+                
+                if (users.length === 0) {
+                    // Mostrar mensaje de vacío
+                    emptyMessage.style.display = 'block';
+                    document.getElementById('usersTable').style.display = 'none';
+                } else {
+                    // Ocultar mensaje de vacío
+                    emptyMessage.style.display = 'none';
+                    document.getElementById('usersTable').style.display = 'table';
+                    
+                    // Renderizar filas
+                    users.forEach(user => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><span class="id-badge">#${user.id.substring(0, 8)}</span></td>
+                            <td>${user.name || 'Sin nombre'}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phone || 'Sin teléfono'}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                }
+            }
+            
+            // Función para renderizar pedidos
+            function renderOrders() {
+                const tbody = document.querySelector('#ordersTable tbody');
+                const emptyMessage = document.getElementById('emptyOrders');
+                
+                // Limpiar tabla
+                tbody.innerHTML = '';
+                
+                if (orders.length === 0) {
+                    // Mostrar mensaje de vacío
+                    emptyMessage.style.display = 'block';
+                    document.getElementById('ordersTable').style.display = 'none';
+                } else {
+                    // Ocultar mensaje de vacío
+                    emptyMessage.style.display = 'none';
+                    document.getElementById('ordersTable').style.display = 'table';
+                    
+                    // Renderizar filas
+                    orders.forEach(order => {
+                        // Buscar usuario
+                        const user = users.find(u => u.id === order.userId) || { email: 'Usuario desconocido' };
+                        
+                        // Formatear fecha
+                        const date = new Date(order.createdAt);
+                        const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+                        
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><span class="id-badge">#${order.id.substring(0, 8)}</span></td>
+                            <td>${user.email}</td>
+                            <td>${formattedDate}</td>
+                            <td>$${order.total.toLocaleString()}</td>
+                            <td>${getPaymentStatusText(order.paymentStatus)}</td>
+                            <td>
+                                <button class="view-details" data-id="${order.id}">Ver detalles</button>
+                            </td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                    
+                    // Configurar botones de detalles
+                    document.querySelectorAll('.view-details').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const orderId = this.getAttribute('data-id');
+                            showOrderDetails(orderId);
+                        });
+                    });
+                }
+            }
+            
+            // Función para mostrar detalles del pedido
+            function showOrderDetails(orderId) {
+                const order = orders.find(o => o.id === orderId);
+                if (!order) return;
+                
+                const user = users.find(u => u.id === order.userId) || { email: 'Usuario desconocido' };
+                
+                // Formatear fecha
+                const date = new Date(order.createdAt);
+                const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+                
+                let itemsHtml = '';
+                order.items.forEach(item => {
+                    itemsHtml += `
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.quantity}</td>
+                            <td>$${item.price.toLocaleString()}</td>
+                            <td>$${(item.price * item.quantity).toLocaleString()}</td>
+                        </tr>
+                    `;
+                });
+                
+                const detailsHtml = `
+                    <div class="order-info">
+                        <p><strong>ID del Pedido:</strong> <span class="id-badge">#${order.id.substring(0, 8)}</span></p>
+                        <p><strong>Cliente:</strong> ${user.name || user.email}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Teléfono:</strong> ${user.phone || 'No disponible'}</p>
+                        <p><strong>Fecha:</strong> ${formattedDate}</p>
+                        <p><strong>Dirección de Envío:</strong> ${order.shippingAddress || 'No especificada'}</p>
+                        <p><strong>Estado de Pago:</strong> ${getPaymentStatusText(order.paymentStatus)}</p>
+                        <p><strong>Notas:</strong> ${order.notes || 'Sin notas'}</p>
+                    </div>
+                    
+                    <h5>Productos</h5>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${itemsHtml}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" style="text-align: right;"><strong>Subtotal:</strong></td>
+                                <td>$${order.subtotal.toLocaleString()}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="text-align: right;"><strong>Descuento:</strong></td>
+                                <td>$${order.discount.toLocaleString()}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="text-align: right;"><strong>Costo de Envío:</strong></td>
+                                <td>$${order.shippingCost.toLocaleString()}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                                <td><strong>$${order.total.toLocaleString()}</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    
+                    <button id="closeDetails" class="refresh-btn" style="margin-top: 15px; background-color: #6c757d;">Cerrar Detalles</button>
+                `;
+                
+                document.getElementById('orderDetailsContent').innerHTML = detailsHtml;
+                document.getElementById('orderDetails').style.display = 'block';
+                
+                // Configurar botón de cierre
+                document.getElementById('closeDetails').addEventListener('click', function() {
+                    document.getElementById('orderDetails').style.display = 'none';
+                });
+            }
+            
+            // Función para obtener texto de estado de pago
+            function getPaymentStatusText(status) {
+                const statusMap = {
+                    'pending': 'Pendiente',
+                    'paid': 'Pagado',
+                    'failed': 'Fallido',
+                    'refunded': 'Reembolsado'
+                };
+                
+                return statusMap[status] || status;
+            }
+        });
+    </script>
+</body>
+</html>
