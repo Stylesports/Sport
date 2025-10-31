@@ -191,28 +191,24 @@
                     <h3>Casco Integral Negro</h3>
                     <p class="price">$190.000 COP</p>
                     <button class="add-to-cart-btn" onclick="addToCart('casco-1', 'Casco Integral Negro', 190000)">Agregar Ahora</button>
-                    <button class="customize-btn" onclick="showCustomizationModal('casco-1')">Personalizar</button>
                 </div>
                 <div class="product-card" data-product='{"id": "casco-2", "name": "Casco Modular Blanco", "price": 220000, "category": "cascos"}'>
                     <img src="modular.webp" alt="Casco Modular Blanco">
                     <h3>Casco Modular Blanco</h3>
                     <p class="price">$220.000 COP</p>
                     <button class="add-to-cart-btn" onclick="addToCart('casco-2', 'Casco Modular Blanco', 220000)">Agregar Ahora</button>
-                    <button class="customize-btn" onclick="showCustomizationModal('casco-2')">Personalizar</button>
                 </div>
                 <div class="product-card" data-product='{"id": "casco-3", "name": "Casco Abierto Rojo", "price": 150000, "category": "cascos"}'>
                     <img src="rojo.webp" alt="Casco Abierto Rojo">
                     <h3>Casco Abierto Rojo</h3>
                     <p class="price">$150.000 COP</p>
                     <button class="add-to-cart-btn" onclick="addToCart('casco-3', 'Casco Abierto Rojo', 150000)">Agregar Ahora</button>
-                    <button class="customize-btn" onclick="showCustomizationModal('casco-3')">Personalizar</button>
                 </div>
                 <div class="product-card" data-product='{"id": "casco-4", "name": "Casco Cross Azul", "price": 200000, "category": "cascos"}'>
                     <img src="cross azul.jpg" alt="Casco Cross Azul">
                     <h3>Casco Cross Azul</h3>
                     <p class="price">$200.000 COP</p>
                     <button class="add-to-cart-btn" onclick="addToCart('casco-4', 'Casco Cross Azul', 200000)">Agregar Ahora</button>
-                    <button class="customize-btn" onclick="showCustomizationModal('casco-4')">Personalizar</button>
                 </div>
             </div>
             <button class="carousel-btn next" onclick="moveCarousel('cascos', 1)">›</button>
@@ -344,49 +340,7 @@
         </div>
     </div>
 
-    <!-- Modal de Personalización de Cascos -->
-    <div id="customization-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Personalizar Casco</h3>
-                <button class="close-modal" onclick="closeCustomizationModal()">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="customization-options">
-                    <div class="option-group">
-                        <label>Color:</label>
-                        <div class="color-options">
-                            <button class="color-btn" data-color="negro" style="background: #000;"></button>
-                            <button class="color-btn" data-color="blanco" style="background: #fff; border: 1px solid #ccc;"></button>
-                            <button class="color-btn" data-color="rojo" style="background: #ff0000;"></button>
-                            <button class="color-btn" data-color="azul" style="background: #0000ff;"></button>
-                        </div>
-                    </div>
-                    <div class="option-group">
-                        <label>Diseño:</label>
-                        <select id="design-select">
-                            <option value="sólido">Sólido</option>
-                            <option value="rayas">Rayas</option>
-                            <option value="camuflaje">Camuflaje</option>
-                            <option value="personalizado">Personalizado</option>
-                        </select>
-                    </div>
-                    <div class="option-group">
-                        <label>Texto personalizado:</label>
-                        <input type="text" id="custom-text" placeholder="Escribe tu texto aquí" maxlength="20">
-                    </div>
-                    <div class="option-group">
-                        <label>Precio adicional:</label>
-                        <span id="custom-price">$0 COP</span>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeCustomizationModal()">Cancelar</button>
-                <button class="btn-primary" onclick="addCustomizedToCart()">Agregar al Carrito</button>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Modal de Catálogo -->
     <div id="catalog-modal" class="modal">

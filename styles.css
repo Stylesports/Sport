@@ -1328,25 +1328,6 @@ html {
     padding-left: 45px;
 }
 
-.customize-btn {
-    background: #4ecdc4;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    transition: all 0.3s ease;
-    width: 100%;
-    font-size: 0.9rem;
-}
-
-.customize-btn:hover {
-    background: #44a08d;
-    transform: translateY(-2px);
-}
-
 /* Productos de regalo */
 .gift-card {
     border: 2px solid #4ecdc4;
@@ -1549,42 +1530,6 @@ html {
     justify-content: flex-end;
 }
 
-/* Personalización de cascos */
-.customization-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.option-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.option-group label {
-    font-weight: 600;
-    color: #1a1a2e;
-}
-
-.color-options {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.color-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.color-btn.selected {
-    border-color: #4ecdc4;
-    transform: scale(1.1);
-}
 
 .option-group select,
 .option-group input {

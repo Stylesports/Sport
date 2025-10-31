@@ -1,6 +1,5 @@
 // Variables globales
 let cart = [];
-let currentCustomization = null;
 let cartTotal = 0;
 
 // Abrir WhatsApp desde el carrito con el resumen actual
@@ -1075,111 +1074,6 @@ function getProductImage(productId) {
     }
     return 'https://via.placeholder.com/300x300?text=Producto';
 }
-
-// Sistema de personalización de cascos
-function showCustomizationModal(productId) {
-    currentCustomization = productId;
-    const modal = document.getElementById('customization-modal');
-    const overlay = document.getElementById('modal-overlay');
-    
-    if (modal && overlay) {
-        modal.classList.add('show');
-        overlay.classList.add('show');
-    }
-    
-    // Resetear opciones
-    document.getElementById('custom-text').value = '';
-    document.getElementById('design-select').value = 'sólido';
-    document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
-    updateCustomPrice();
-}
-
-function closeCustomizationModal() {
-    const modal = document.getElementById('customization-modal');
-    const overlay = document.getElementById('modal-overlay');
-    
-    if (modal && overlay) {
-        modal.classList.remove('show');
-        overlay.classList.remove('show');
-    }
-    
-    currentCustomization = null;
-}
-
-function addCustomizedToCart() {
-    if (!currentCustomization) return;
-    
-    const color = document.querySelector('.color-btn.selected')?.dataset.color || 'negro';
-    const design = document.getElementById('design-select').value;
-    const customText = document.getElementById('custom-text').value;
-    
-    const productName = `Casco Personalizado (${color}, ${design})`;
-    if (customText) {
-        productName += ` - "${customText}"`;
-    }
-    
-    const basePrice = getProductPrice(currentCustomization);
-    const customPrice = calculateCustomPrice(design, customText);
-    const totalPrice = basePrice + customPrice;
-    
-    addToCart(currentCustomization + '-custom', productName, totalPrice);
-    closeCustomizationModal();
-}
-
-function calculateCustomPrice(design, customText) {
-    let price = 0;
-    
-    if (design === 'rayas') price += 20000;
-    else if (design === 'camuflaje') price += 30000;
-    else if (design === 'personalizado') price += 50000;
-    
-    if (customText) price += 15000;
-    
-    return price;
-}
-
-function updateCustomPrice() {
-    const design = document.getElementById('design-select').value;
-    const customText = document.getElementById('custom-text').value;
-    const price = calculateCustomPrice(design, customText);
-    
-    document.getElementById('custom-price').textContent = `$${price.toLocaleString()} COP`;
-}
-
-function getProductPrice(productId) {
-    const productCard = document.querySelector(`[data-product*="${productId}"]`);
-    if (productCard) {
-        const priceElement = productCard.querySelector('.price');
-        if (priceElement) {
-            const priceText = priceElement.textContent.replace(/[^\d]/g, '');
-            return parseInt(priceText) || 0;
-        }
-    }
-    return 0;
-}
-
-// Event listeners para personalización
-document.addEventListener('DOMContentLoaded', function() {
-    // Color selection
-    document.querySelectorAll('.color-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
-            this.classList.add('selected');
-        });
-    });
-    
-    // Design and text changes
-    const designSelect = document.getElementById('design-select');
-    const customText = document.getElementById('custom-text');
-    
-    if (designSelect) {
-        designSelect.addEventListener('change', updateCustomPrice);
-    }
-    
-    if (customText) {
-        customText.addEventListener('input', updateCustomPrice);
-    }
-});
 
 // Sistema de catálogo
 function showCatalog(category) {
